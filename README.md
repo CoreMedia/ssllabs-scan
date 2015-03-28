@@ -42,3 +42,17 @@ OPTIONS
 | --usecache  | false         | If true, accept cached results (if available), else force live scan |
 | --grade     | false         | Output only the hostname: grade |
 | --hostcheck | false         | If true, host resolution failure will result in a fatal error |
+
+###Embed in Docker container
+
+In order to use the scan tool embedded in a Docker container (based on minimal [gliderlabs/docker-alpine](https://github.com/gliderlabs/docker-alpine) image) follow these steps:
+
+BUILD IMAGE
+
+```docker build -t sslscan .```
+
+RUN IMAGE
+
+```docker run --name test --rm sslscan <options>```
+
+See also <https://docs.docker.com/userguide/> and <https://registry.hub.docker.com/u/gliderlabs/alpine/>.
